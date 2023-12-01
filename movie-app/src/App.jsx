@@ -1,4 +1,5 @@
 
+import AllRoute from './AllRoute/AllRoute'
 import './App.css'
 import Home from './Components/Home'
 import Signup from './Components/Signup'
@@ -8,9 +9,9 @@ function App() {
 
   return (
     <>
-          <h1>Movie App</h1>
+          <AllRoute/>
           {/* <Signup/> */}
-          <Home/>
+         
     </>
   )
 }

@@ -10,6 +10,7 @@
 
 .card-items {
   text-align: center; 
+  margin-top: 20px;
   
 }
 
@@ -50,6 +51,26 @@ width: 250px;
     font-size: 20px;
     font-family:serif;
     padding-left: 20px;
+}
+
+
+
+/* ==================================*/
+
+.add-view-btn{
+  display: flex;
+  justify-content:space-evenly;
+  margin-top: 10px;
+}
+.view,.add{
+   
+  border: none;
+  border-radius: 5px;
+  background-color:rgb(243, 73, 73) ;
+  color: white;
+  width: 60px;
+  height: 20px;
+  font-size: 15px;
 }
 
 

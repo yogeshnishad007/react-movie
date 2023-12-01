@@ -1,13 +1,12 @@
 
 import React, { useEffect, useState } from "react";
 import "../Css/home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [searchMovie, setSearchMovie] = useState("");
 
-  
-  //https://www.omdbapi.com/?i=tt3896198&apikey=2f0fc567&s=${searchTerm}
   const fetchData = async (searchTerm) => {
     const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=2f0fc567&s=${searchTerm}`);
     const result = await response.json();
@@ -45,7 +44,15 @@ const Home = () => {
         {data.map((el, index) => (
           <div key={index} className="card-items">
             <img src={el.Poster} alt={el.Title} />
-            <h3>{el.Title}</h3>
+
+               <div className="add-view-btn">
+               <Link to={`movie/${el.imdbID}`}><button className="view"> View</button>  </Link> 
+
+                  <button className="add" >Fav</button>
+
+               </div>
+            
+        
           </div>
         ))}
       </div>

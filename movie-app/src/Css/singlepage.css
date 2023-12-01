@@ -1,0 +1,33 @@
+
+
+.single-movie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 100px;
+}
+.single-movie>img{
+
+    width: 400px;
+    height: 200px;
+}
+
+.loader{
+    font-family: serif;
+    font-weight: 600;
+}
+
+/*====================*/
+
+
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+    
+    .single-movie {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    
+      
+   }
