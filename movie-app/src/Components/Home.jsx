@@ -69,6 +69,15 @@ const Home = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
 
+         
+      <div className="sort-bar">
+        <label>Sort by:</label>
+        <select >
+          <option value="year">Year</option>
+          <option value="rating">Rating</option>
+        </select>
+      </div>
+
 
       <div className="movie-container">
         {data.map((el, index) => (
