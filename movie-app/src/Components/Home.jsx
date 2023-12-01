@@ -6,6 +6,8 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [searchMovie, setSearchMovie] = useState("");
 
+  
+  //https://www.omdbapi.com/?i=tt3896198&apikey=2f0fc567&s=${searchTerm}
   const fetchData = async (searchTerm) => {
     const response = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=2f0fc567&s=${searchTerm}`);
     const result = await response.json();
@@ -23,6 +25,9 @@ const Home = () => {
     fetchData("hulk");
   }, []); 
 
+
+
+
   return (
     <>
       <div className="search-bar">
@@ -34,6 +39,7 @@ const Home = () => {
         />
         <button onClick={handleSearch}>Search</button>
       </div>
+
 
       <div className="movie-container">
         {data.map((el, index) => (
@@ -48,3 +54,5 @@ const Home = () => {
 };
 
 export default Home;
+
+
