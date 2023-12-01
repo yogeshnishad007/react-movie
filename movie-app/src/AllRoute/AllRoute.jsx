@@ -16,7 +16,7 @@ const AllRoute=()=>{
                 <Route path="/" element={<Signup/>}/>
                 <Route path="/signin" element={<Signin/>}/>
                  <Route path="/home" element={<Home/>}/>
-                 <Route path="/movie/:Id" element={<SinglePage/>}/>
+                 <Route path="/home/movie/:Id" element={<SinglePage/>}/>
                  <Route path="/favorites" element={<Favorites/>} />
                
            </Routes>

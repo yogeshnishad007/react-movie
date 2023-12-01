@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const [data, setData] = useState([]);
   const [searchMovie, setSearchMovie] = useState("");
+  const [sortBy, setSortBy] = useState("");
 
   // Fetching API Data
   const fetchData = async (searchTerm) => {
@@ -55,6 +56,28 @@ const Home = () => {
   }, []); 
 
 
+  // Sorting Logic Here
+  const handleSortBy = (criteria) => {
+    setSortBy(criteria);
+  };
+
+  const sortData = () => {
+    let sortedData = [...data];
+
+
+    if (sortBy === "year") {
+      sortedData = sortedData.sort((a, b) => parseInt(a.Year, 10) - parseInt(b.Year, 10));
+    } 
+
+    setData(sortedData);
+  };
+
+
+
+  useEffect(() => {
+    sortData();
+  }, [sortBy]);
+
 
 
   return (
@@ -70,19 +93,21 @@ const Home = () => {
       </div>
 
          
-      <div className="sort-bar">
-        <label>Sort by:</label>
-        <select >
-          <option value="year">Year</option>
-          <option value="rating">Rating</option>
-        </select>
+               
+         <div className="sort-bar">
+            <label>Sort by:</label>
+            <select onChange={(e) => handleSortBy(e.target.value)}>
+              <option value="">-- Select --</option>
+              <option value="year">Year</option>
+            </select>
       </div>
 
-
-      <div className="movie-container">
+         <div className="movie-container">
         {data.map((el, index) => (
           <div key={index} className="card-items">
+            
             <img src={el.Poster} alt={el.Title} />
+                 
 
                <div className="add-view-btn">
                <Link to={`movie/${el.imdbID}`}><button className="view"> View</button>  </Link> 
@@ -90,11 +115,18 @@ const Home = () => {
                   <button className="add" onClick={()=>handleAdd(el)} >Fav</button>
 
                </div>
-            
+                
+               <b className="year">Year : {el.Year}</b>
         
           </div>
         ))}
       </div>
+    
+         
+   
+
+
+      
     </>
   );
 };
