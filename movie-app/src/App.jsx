@@ -1,5 +1,7 @@
 
 import './App.css'
+import Home from './Components/Home'
+import Signup from './Components/Signup'
 
 function App() {
  
@@ -7,6 +9,8 @@ function App() {
   return (
     <>
           <h1>Movie App</h1>
+          {/* <Signup/> */}
+          <Home/>
     </>
   )
 }
