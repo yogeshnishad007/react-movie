@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../Css/signup.css"
 const Signup = () => {
   const [signup, setSignup] = useState({
@@ -16,7 +17,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('users', JSON.stringify(signup));
+    localStorage.setItem('users', JSON.stringify([signup]));
    
     alert('Signup successful!');
     setSignup({
@@ -46,8 +47,10 @@ const Signup = () => {
                 <input className="input" placeholder="Password" type="password" name="password" value={signup.password} onChange={handleSignup} />
             
              <div className="submit-btn">
-
-                <button type="submit">Signup</button>
+              <Link to="/signin" className="submit-btn">
+                   <button type="submit">Signup</button>
+              </Link>
+                  
              </div>
             
 

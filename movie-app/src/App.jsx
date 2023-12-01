@@ -2,15 +2,18 @@
 import AllRoute from './AllRoute/AllRoute'
 import './App.css'
 import Home from './Components/Home'
-import Signup from './Components/Signup'
+import Navbar from './Components/Navbar'
+
 
 function App() {
  
 
   return (
     <>
+
+          <Navbar/>
           <AllRoute/>
-          {/* <Signup/> */}
+        
          
     </>
   )

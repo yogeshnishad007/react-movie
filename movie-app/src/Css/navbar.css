@@ -1,0 +1,16 @@
+
+.navbar-container{
+
+       display: flex;
+       justify-content: space-around;
+       margin-bottom: 30px;
+       margin-top: -20px;
+       background-color: rgb(243, 73, 73);
+       border-radius: 10px;
+       
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
